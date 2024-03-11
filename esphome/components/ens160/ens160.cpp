@@ -60,9 +60,9 @@ void ENS160Component::setup() {
   }
   ESP_LOGI(TAG, "ENS160 Part id :  %s ", part_id);
   ESP_LOGI(TAG, "BBBB");
-  ESP_LOGI(TAG, "%s",part_id);
+  ESP_LOGI(TAG, "%s", part_id);
   ESP_LOGI(TAG, "ENS160_PART_ID");
-  ESP_LOGI(TAG, ENS160_PART_ID);
+  ESP_LOGI(TAG, "%s", ENS160_PART_ID);
   
   if (part_id != ENS160_PART_ID) {
     this->error_code_ = INVALID_ID;
