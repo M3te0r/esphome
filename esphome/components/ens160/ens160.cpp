@@ -58,6 +58,7 @@ void ENS160Component::setup() {
     this->mark_failed();
     return;
   }
+  ESP_LOGI(TAG, "ENS160 Part id :  % ", part_id);
   if (part_id != ENS160_PART_ID) {
     this->error_code_ = INVALID_ID;
     this->mark_failed();
