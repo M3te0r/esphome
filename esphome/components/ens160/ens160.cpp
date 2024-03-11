@@ -64,11 +64,11 @@ void ENS160Component::setup() {
   ESP_LOGI(TAG, "ENS160_PART_ID");
   ESP_LOGI(TAG, "%u", (unsigned int)ENS160_PART_ID);
   
-  if (part_id != ENS160_PART_ID) {
-    this->error_code_ = INVALID_ID;
-    this->mark_failed();
-    return;
-  }
+ // if (part_id != ENS160_PART_ID) {
+ //   this->error_code_ = INVALID_ID;
+//    this->mark_failed();
+  //  return;
+//  }
 
   // set mode to reset
   if (!this->write_byte(ENS160_REG_OPMODE, ENS160_OPMODE_RESET)) {
