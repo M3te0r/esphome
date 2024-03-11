@@ -58,11 +58,11 @@ void ENS160Component::setup() {
     this->mark_failed();
     return;
   }
-  ESP_LOGI(TAG, "ENS160 Part id :  %s ", part_id);
+  ESP_LOGI(TAG, "ENS160 Part id :  %hu ", part_id);
   ESP_LOGI(TAG, "BBBB");
-  ESP_LOGI(TAG, "%s", part_id);
+  ESP_LOGI(TAG, "%hu", part_id);
   ESP_LOGI(TAG, "ENS160_PART_ID");
-  ESP_LOGI(TAG, "%s", ENS160_PART_ID);
+  ESP_LOGI(TAG, "%hu", ENS160_PART_ID);
   
   if (part_id != ENS160_PART_ID) {
     this->error_code_ = INVALID_ID;
