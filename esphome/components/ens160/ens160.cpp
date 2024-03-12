@@ -58,17 +58,14 @@ void ENS160Component::setup() {
     this->mark_failed();
     return;
   }
-  ESP_LOGI(TAG, "ENS160 Part id :  %u ", (unsigned int)part_id);
-  ESP_LOGI(TAG, "BBBB");
-  ESP_LOGI(TAG, "%u", (unsigned int)part_id);
-  ESP_LOGI(TAG, "ENS160_PART_ID");
-  ESP_LOGI(TAG, "%u", (unsigned int)ENS160_PART_ID);
   
- // if (part_id != ENS160_PART_ID) {
- //   this->error_code_ = INVALID_ID;
-//    this->mark_failed();
-  //  return;
-//  }
+  if (part_id != ENS160_PART_ID) {
+    ESP_LOGI(TAG, "ENS160 Part id is invalid");
+    ESP_LOGI(TAG, "Read ENS160 Part id : 0x%x ", part_id);
+    this->error_code_ = INVALID_ID;
+    this->mark_failed();
+    return;
+  }
 
   // set mode to reset
   if (!this->write_byte(ENS160_REG_OPMODE, ENS160_OPMODE_RESET)) {
